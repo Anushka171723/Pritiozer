@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Task</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1 class="edit-head">Progress is not achieved by chance but by the choices we make to refine and improve <i class="fa-regular fa-pen-to-square"></i></h1>
+    <form action="/edit-task" method="POST">
+      <!-- Hidden field to store the task ID -->
+      <input type="hidden" name="id" value="<%= task._id %>">
+      <div>
+        <label for="title">Task Title:</label>
+        <input type="text" id="title" name="title" value="<%= task.title %>" required>
+      </div>
+      <div>
+        <label for="description">Task Description:</label>
+        <input type="text" id="description" name="description" value="<%= task.description %>" required>
+      </div>
+      <div>
+        <label for="quadrant">Quadrant:</label>
+        <select name="quadrant" id="quadrant" required>
+          <option value="importantUrgent" <%= task.quadrant === 'importantUrgent' ? 'selected' : '' %>>Important and Urgent</option>
+          <option value="importantNotUrgent" <%= task.quadrant === 'importantNotUrgent' ? 'selected' : '' %>>Important and Not Urgent</option>
+          <option value="notImportantUrgent" <%= task.quadrant === 'notImportantUrgent' ? 'selected' : '' %>>Not Important and Urgent</option>
+          <option value="notImportantNotUrgent" <%= task.quadrant === 'notImportantNotUrgent' ? 'selected' : '' %>>Not Important and Not Urgent</option>
+        </select>
+      </div>
+      <button type="submit">Save Changes</button>
+      <button type="button" onclick="location.href='/'">Cancel</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coverpage2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('images/background_image.jpeg'); /* Relative path */
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+        
+            height: 98vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;   
+            justify-content: center;
+        }
+
+        .object {
+            height: 60vh;
+            width: 60vh;  
+            overflow: hidden;
+            position: relative; 
+        }
+
+        img {
+            height: 100%; 
+            width: 100%;  
+            object-fit: cover; 
+        }
+
+        p {
+            font-size: 1.5em; 
+            color: white;      
+            text-align: center;
+            width: 60vh; 
+            margin-top: 10px;  
+            box-sizing: border-box;  
+        }
+
+        .next-btn {
+            background-color: #274472;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .next-btn:hover {
+            background-color: #1a3651;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="object">
+            <img src="images/background_img.jpeg" alt="Background">
+        </div>
+        <p id="quote">"The quality of your decisions shapes the life you live—embrace wisdom over haste, and let each choice be a step toward the future you desire."</p>
+        <button class="next-btn" onclick="goToNextPage()">Next</button>
+    </div>
+    <script src="js/qoute.js"></script>
+    <script>
+        // Function to go to the next page
+        function goToNextPage() {
+            window.location.href = 'basic2.html';  // Redirects to coverpage3
+        }
+    </script>
+</body>
+</html>

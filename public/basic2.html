@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coverpage3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #d0e7fd;
+            background-image: url('images/background_image.jpeg'); /* Path to your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            width: 80%;
+            height: 80%;
+            border: 2px solid white;
+            gap: 10px;
+            background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent overlay for better contrast */
+            border-radius: 15px;
+        } 
+        .quadrant {
+            border: 1px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1.5rem;
+            border-radius: 15px;
+            margin: 10px;
+            color: white;
+            background-color: rgba(39, 68, 114, 0.7); /* Semi-transparent background for quadrants */
+        }
+        .next-btn {
+            background-color: #274472;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .next-btn:hover {
+            background-color: #1a3651;
+        }
+    </style>
+</head>
+<body>
+    <div class="matrix">
+        <div class="quadrant">QUADRANT 1<br>Urgent & Important<br><br>(Address these tasks immediately)</div>
+        <div class="quadrant">QUADRANT 2<br>Not Urgent & Important<br><br>(Prioritize these tasks)</div>
+        <div class="quadrant">QUADRANT 3<br>Urgent & Not Important<br><br>(Minimize these tasks if possible)</div>
+        <div class="quadrant">QUADRANT 4<br>Not Urgent & Not Important<br><br>(Eliminate these tasks if possible)</div>
+    </div>
+    <button class="next-btn" onclick="location.href='/prioritime';">Go to Prioritime</button>
+</body>
+</html>
