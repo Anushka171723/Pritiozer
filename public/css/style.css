@@ -435,4 +435,6 @@ body {
     background-color: #1e1e1e;
     border: 1px solid #ffffff;
   }
-  
+  #darkModeToggle{
+    margin-top: 20px;
+  }
