@@ -1,0 +1,1 @@
+Matrix Planner is a web-based application designed to help users organize their tasks efficiently using Stephen Covey's Time Management Matrix. This matrix helps users prioritize tasks based on importance and urgency, enabling better decision-making and productivity.
