@@ -255,22 +255,10 @@ padding:15px  50px 15px 50px;
     font-size: 1.5rem;
 }
 
-/* Style for Completed status text */
+
 span {
     font-size: 1rem;
-    color:white;
-}
-
-#rewardMessage {
-    display: none;
-    background-color: #ffeb3b;
-    color: #333;
-    text-align: center;
-    font-weight: bold;
-    padding: 10px;
-    margin-top: 20px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    color:rgb(243, 231, 231);
 }
 
 
@@ -322,41 +310,7 @@ body {
     background-color: #45a049;
   }
   
-  #reward-message {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #ffeb3b;
-    color: #333;
-    font-size: 18px;
-    border: 2px solid #ffc107;
-    border-radius: 10px;
-    display: none;
-    animation: fadeIn 2s ease-in-out;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  /* Confetti styling */
-  #confetti-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 10;
-  }
-  
-  .confetti-piece {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: #ff5f5f;
-    animation: fall 3s linear infinite;
-    opacity: 0.8;
-  }
+
   
   /* Animations */
   @keyframes fall {
@@ -377,7 +331,7 @@ body {
     }
   }
   
-/* Global reset for consistent sizing */
+
 * {
     margin: 0;
     padding: 0;
@@ -390,21 +344,21 @@ body {
     padding: 0;
     text-align: center;
     background-color: #c3e0e5;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
 }
 
 .top, .bottom {
-    width: 100%; /* Full width */
-    height: 10vh; /* Set the height to 10% of viewport height */
+    width: 100%; 
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #274472; /* Same background color for consistency */
+    background-color: #274472;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-    position: relative; /* Ensures it stays aligned */
+    position: relative;
 }
 
-/* For text or content inside .top and .bottom */
+
 .top .logo,
 .bottom p {
     margin: 0 auto;
@@ -460,5 +414,25 @@ body {
   
   body {
     transition: background-color 0.3s, color 0.3s;
+  }
+  
+  body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #f8f0f0; /* Light text */
+  }
+  
+  .dark-mode a {
+    color: #bb86fc; /* Highlight links */
+  }
+  
+  .dark-mode input, .dark-mode select, .dark-mode button {
+    background-color: #2a2a2a; 
+    color: #e7d8d8;
+    border: 1px solid #ffffff;
+  }
+  
+  .dark-mode .form-container {
+    background-color: #1e1e1e;
+    border: 1px solid #ffffff;
   }
   
