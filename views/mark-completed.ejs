@@ -1,29 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="task">
-        <p>
-            <%= task.title %>
-           // Form to mark as completed 
-            <form action="/mark-completed/<%= task._id %>" method="POST" style="display: inline;">
-                <button type="submit">
-                    <% if (task.completed) { %> Unmark as Completed <% } else { %> Mark as Completed <% } %>
-                </button>
-            </form>
-        </p>
-    </div>
-    <script src="/js/reward.js"></script>
-
-</body>
-</html> 
-
- -->
-
 
  <!DOCTYPE html>
 <html lang="en">
@@ -32,50 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <style>
-        /* Reward overlay styling */
-        .reward-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            z-index: 1000;
-        }
-
-        .reward-overlay h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .reward-overlay button {
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            background: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .reward-overlay button:hover {
-            background: #45a049;
-        }
-    </style>
 </head>
 <body>
     <div class="task">
         <p>
             <%= task.title %>
             <!-- Form to mark as completed -->
-            <form 
+             <form 
                 action="/mark-completed/<%= task._id %>" 
                 method="POST" 
                 style="display: inline;"
@@ -87,59 +24,7 @@
         </p>
     </div>
 
-    <!-- Reward Overlay -->
-    <div class="reward-overlay" id="reward-overlay">
-        <h1 id="reward-message"></h1>
-        <button onclick="closeReward()">Close</button>
-    </div>
 
-    <script>
-        // Array of reward messages
-        const rewardMessages = [
-            "Great job! You've completed a task!",
-            "You're on fire! Keep going!",
-            "Another step closer to your goals!",
-            "Awesome work! Keep it up!"
-        ];
-
-        // Function to handle task completion
-        function handleCompletion(event, taskId) {
-            event.preventDefault(); // Prevent form submission
-
-            // Send a POST request to the backend
-            fetch(`/mark-completed/${taskId}`, { method: 'POST' })
-                .then(response => {
-                    if (response.ok) {
-                        // Show reward overlay
-                        const message = rewardMessages[Math.floor(Math.random() * rewardMessages.length)];
-                        document.getElementById('reward-message').innerText = message;
-
-                        const overlay = document.getElementById('reward-overlay');
-                        overlay.style.display = 'flex';
-
-                        // Trigger confetti
-                        confetti({
-                            particleCount: 100,
-                            spread: 70,
-                            origin: { y: 0.6 },
-                        });
-
-                        // Optionally, refresh the page or update the UI dynamically
-                        setTimeout(() => {
-                            location.reload(); // Refresh the page to show updated task status
-                        }, 3000);
-                    } else {
-                        alert('Failed to mark task as completed.');
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-        }
-
-        // Function to close the reward overlay
-        function closeReward() {
-            document.getElementById('reward-overlay').style.display = 'none';
-        }
-    </script>
 </body>
 </html>
 
